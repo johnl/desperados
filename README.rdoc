@@ -1,0 +1,29 @@
+= desperados: A Ruby library for Ceph's Rados
+
+Ceph is a distributed network storage and file system. It's based on a
+reliable and scalable distributed object store calles RADOS.  More
+about it here: http://ceph.newdream.net
+
+Desperados is a Ruby wrapper for the C++ librados library, making
+interacting with a Ceph cluster in Ruby very easy.
+
+== Example
+
+  Rados::initialize
+
+  pool = Rados::Pool.create "mypool"
+  pool.write "mykey", "somedata"
+  puts pool.read "mykey"
+
+== Configuration
+
+librados will read your ceph.conf config file to discover your
+cluster's monitors, so that needs to be available (usually in
+./ceph.conf or /etc/ceph/ceph.conf)
+
+== About
+
+Author::  John Leach  (mailto:john@johnleach.co.uk)
+Copyright:: Copyright (c) 2010 John Leach
+License:: LGPL
+Github:: http://github.com/johnl/desperados/tree/master
