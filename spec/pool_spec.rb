@@ -1,4 +1,4 @@
-require 'lib/rados'
+require File.join(File.dirname(__FILE__), '../lib/rados')
 include Rados
 
 describe Pool do
@@ -64,7 +64,7 @@ describe Pool do
       buf = @pool.read(oid)
       buf.should == "1234\0006789"
       buf.size.should == 9
-      buf[4].should == 0
+      buf[4].ord.should == 0
     end
 
     it "should write at a specified offset" do

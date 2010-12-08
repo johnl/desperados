@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'lib/rados'
+require File.dirname(__FILE__) + '/../lib/rados'
 require 'logger'
 require 'benchmark'
 
