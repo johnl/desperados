@@ -1,7 +1,6 @@
 require 'rake'
-require 'spec/rake/spectask'
+require 'rubygems'
+require 'rspec/core/rake_task.rb'
 
 desc "Run all specs"
-Spec::Rake::SpecTask.new('spec') do |t|
-	t.spec_files = FileList['spec/*.rb']
-end
+RSpec::Core::RakeTask.new('spec')
