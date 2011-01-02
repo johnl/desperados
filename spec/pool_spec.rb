@@ -2,15 +2,15 @@ require File.join(File.dirname(__FILE__), '../lib/rados')
 include Rados
 
 describe Pool do
-  def a_pool_name
+  def a_pool_name #:nodoc:
     "pool-#{rand(0xffffffff).to_s(36)}"
   end
 
-  def an_oid
+  def an_oid #:nodoc:
     "oid-#{rand(0xffffffff).to_s(36)}"
   end
 
-  def a_pool
+  def a_pool #:nodoc:
     Pool.create(a_pool_name)
   end
 
