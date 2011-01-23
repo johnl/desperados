@@ -9,6 +9,7 @@ interacting with a Ceph cluster in Ruby very easy.
 
 == Basic Example
 
+	require 'rados'
   Rados::initialize
 
   pool = Rados::Pool.create("mypool")
@@ -17,6 +18,7 @@ interacting with a Ceph cluster in Ruby very easy.
 
 == Object Orientated Example
 
+	require 'rados'
 	Rados::initialize
 
 	pool = Rados::Pool.create("mypool")
