@@ -130,5 +130,14 @@ describe Pool do
       lambda { @pool.read(oid) }.should raise_error Rados::ObjectNotFound
     end
 
-  end    
+  end  
+
+  describe "#objects" do
+    it "should be an instance of ObjectCollection with this pool" do
+      pool = Pool.new("testpool")
+      pool.objects.should be_a_kind_of ObjectCollection
+      pool.objects.pool.should == pool
+    end
+  end
+      
 end
