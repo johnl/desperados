@@ -47,11 +47,15 @@ module Rados #:nodoc:
     end
 
     def write(buf)
+      # FIXME: If the following does a part write and raises an
+      # exception then the @position is invalid
       @position += pool.write(id, buf, :offset => @position)
       self
     end
 
     def read
+      # FIXME: If the following does a part read and raises an
+      # exception then the @position is invalid
       buf = pool.read(id, :offset => @position)
       if buf.size == 0
         nil
