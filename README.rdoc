@@ -18,18 +18,18 @@ interacting with a Ceph cluster in Ruby very easy.
 
 == Object Orientated Example
 
-	require 'rados'
-	Rados::initialize
+  require 'rados'
+  Rados::initialize
 
-	pool = Rados::Pool.create("mypool")
-	o = pool.objects.new("mykey")
-	o.write("Once upon")
-	o.write(" a time")
-	o.seek(0)
-	o.read == "Once upon a time"
-	o = pool.objects.find("mykey")
-	o.seek(5)
-	o.read == "upon a time"
+  pool = Rados::Pool.create("mypool")
+  o = pool.objects.new("mykey")
+  o.write("Once upon")
+  o.write(" a time")
+  o.seek(0)
+  o.read == "Once upon a time"
+  o = pool.objects.find("mykey")
+  o.seek(5)
+  o.read == "upon a time"
 
 == Configuration
 
